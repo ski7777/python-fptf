@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 
-from .Helpers import getOptionalValue, setDictValueNotNone
+from .Helpers import getValueOptional, setDictValueNotNone
 
 
 class Location:
@@ -25,11 +25,11 @@ class Location:
                 # raise error when type attribute not is present
                 raise ValueError("Type must be \"location\"")
             # parse items
-            self._name = getOptionalValue(data, "name", str)
-            self._address = getOptionalValue(data, "address", str)
-            self._longitude = getOptionalValue(data, "longitude", float)
-            self._latitude = getOptionalValue(data, "latitude", float)
-            self._altitude = getOptionalValue(data, "altitude", float)
+            self._name = getValueOptional(data, "name", str)
+            self._address = getValueOptional(data, "address", str)
+            self._longitude = getValueOptional(data, "longitude", float)
+            self._latitude = getValueOptional(data, "latitude", float)
+            self._altitude = getValueOptional(data, "altitude", float)
             if (self._longitude != None) != (self._latitude != None):
                 # raise error if only one of longitude and latitude is present
                 raise ValueError("You must supply both longitude and latitude or none of them!")
