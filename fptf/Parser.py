@@ -4,6 +4,7 @@
 
 from .AttributeMissingException import AttributeMissingException
 from .Location import Location
+from .Operator import Operator
 
 
 def parseFPTF(data):
@@ -45,7 +46,7 @@ def parseItem(data):
     elif data["type"] == "schedule":
         pass
     elif data["type"] == "operator":
-        pass
+        return(Operator(data))
     elif data["type"] == "journey":
         pass
     # raise error if type is unknown
@@ -54,7 +55,7 @@ def parseItem(data):
 
 def toFPTF(data):
     # define known FPTF classes:
-    classes = [Location]
+    classes = [Location, Operator]
     # check whether data is FPTF class
     if type(data) in classes:
         # call class' toFPTF function
