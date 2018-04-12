@@ -44,6 +44,8 @@ def parseItem(data):
         pass
     elif data["type"] == "schedule":
         pass
+    elif data["type"] == "operator":
+        pass
     elif data["type"] == "journey":
         pass
     # raise error if type is unknown
