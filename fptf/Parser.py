@@ -67,6 +67,9 @@ def toFPTF(data):
         for item in data:
             if type(item) not in classes:
                 # raise error if type of item is not FPTF class
-                raise TypeError("Item is not subclass of class FPTF")
+                raise TypeError("Item is not FPTF class!")
             # call item's toFPTF function and append to list
             items.append(item.toFPTF())
+        return(items)
+    # raise error if item is not FPTF class
+    raise TypeError("Item is not FPTF class!")
