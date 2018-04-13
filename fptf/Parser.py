@@ -9,10 +9,10 @@ from .Operator import Operator
 
 def parseFPTF(data):
     # determine type of data
-    if type(data) == dict:
+    if isinstance(data, dict):
         # single object -> parse directly
         return(parseItem(data))
-    elif type(data) == list:
+    elif isinstance(data, list):
         # list -> parse one by one
         items = []
         # iterate over list
@@ -25,7 +25,7 @@ def parseFPTF(data):
 
 
 def parseItem(data):
-    if type(data) != dict:
+    if not isinstance(data, dict):
         raise TypeError("Data must be type dict!")
     if not "type" in data:
         # raise error when type attribute not present
@@ -60,7 +60,7 @@ def toFPTF(data):
     if type(data) in classes:
         # call class' toFPTF function
         return(data.toFPTF())
-    elif type(data) == list:
+    elif isinstance(value, list):
         # list -> convert one by one
         items = []
         # iterate over list

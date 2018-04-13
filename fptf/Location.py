@@ -13,7 +13,7 @@ class Location:
     _altitude = None
 
     def __init__(self, data={}):
-        if type(data) != dict:
+        if not isinstance(data, dict):
             # raise error if data is not type dict
             raise TypeError("Data must be type dict")
         # check whether data is not empty
@@ -42,7 +42,7 @@ class Location:
     @name.setter
     def name(self, value):
         # setter for name
-        if type(value) != str:
+        if not isinstance(value, str):
             # raise error if name not type string
             raise TypeError("Name must be type str!")
         self._name = value
@@ -60,7 +60,7 @@ class Location:
     @address.setter
     def address(self, value):
         # setter for address
-        if type(value) != str:
+        if not isinstance(value, str):
             # raise error if address not type string
             raise TypeError("Address must be type str!")
         self._address = value
@@ -78,15 +78,15 @@ class Location:
     @coordinate.setter
     def coordinate(self, value):
         # setter for coordinate
-        if type(value) != tuple:
+        if not isinstance(value, tuple):
             # raise error if coordinate not type tuple
             raise TypeError("coordinate must be type tuple!")
         # extract values
         lon, lat = value
-        if type(lon) != float:
+        if not isinstance(value, float):
             # raise error if longitude not type float
             raise TypeError("Longitude must be type float!")
-        if type(lat) != float:
+        if not isinstance(value, float):
             # raise error if latitude not type float
             raise TypeError("Latitude must be type float!")
         self._longitude = lon
@@ -106,7 +106,7 @@ class Location:
     @altitude.setter
     def altitude(self, value):
         # setter for altitude
-        if type(value) != float:
+        if not isinstance(value, float):
             # raise error if altitude not type float
             raise TypeError("Altitude must be type float!")
         self._altitude = value

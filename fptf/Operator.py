@@ -10,7 +10,7 @@ class Operator:
     _name = None
 
     def __init__(self, data={}, id=None, name=None):
-        if type(data) != dict:
+        if not isinstance(value, dict):
             # raise error if data is not type dict
             raise TypeError("Data must be type dict")
         # check whether data is not empty
@@ -26,13 +26,13 @@ class Operator:
             self._name = getValueRequired(data, "name", str)
         # check whether id is present
         if id != None:
-            if type(id) != str:
+            if not isinstance(id, str):
                 # raise error if id not type string
                 raise TypeError("Id must be type str!")
             self._id = id
         # check name id is present
         if name != None:
-            if type(name) != str:
+            if not isinstance(name, str):
                 # raise name if id not type string
                 raise TypeError("Name must be type str!")
             self._name = name
@@ -45,7 +45,7 @@ class Operator:
     @id.setter
     def id(self, value):
         # setter for id
-        if type(value) != str:
+        if not isinstance(value, str):
             # raise error if id not type string
             raise TypeError("Id must be type str!")
         self._id = value
@@ -64,7 +64,7 @@ class Operator:
     @name.setter
     def name(self, value):
         # setter for name
-        if type(value) != str:
+        if not isinstance(value, str):
             # raise error if name not type string
             raise TypeError("Name must be type str!")
         self._name = value

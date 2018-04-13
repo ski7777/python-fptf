@@ -8,7 +8,7 @@ from. AttributeMissingException import AttributeMissingException
 
 
 def getValue(data, key, valtype, required):
-    #check whether key in data
+    # check whether key in data
     if key not in data:
         if required:
             # raise error if not present and required
@@ -16,7 +16,7 @@ def getValue(data, key, valtype, required):
         else:
             # return None if not present but not required
             return(None)
-    if type(data[key]) != valtype:
+    if not isinstance(data[key], valtype):
         # raise Error if value not type valtype
         raise AttributeBadTypeException(key, valtype)
     # return value
