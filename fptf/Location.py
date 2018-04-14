@@ -118,7 +118,9 @@ class Location:
 
     def toFPTF(self):
         # create empty dict
-        fptf = {}
+        fptf = {
+            "type": "location"
+        }
         # copy values to dict if present
         fptf = setDictValueNotNone(fptf, "name", self._name)
         fptf = setDictValueNotNone(fptf, "address", self._address)

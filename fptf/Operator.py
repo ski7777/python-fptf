@@ -77,7 +77,9 @@ class Operator:
 
     def toFPTF(self):
         # create empty dict
-        fptf = {}
+        fptf = {
+            "type": "operator"
+        }
         # copy values to dict
         fptf["id"] = self._id
         fptf["name"] = self._name
