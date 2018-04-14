@@ -10,7 +10,7 @@ class Operator:
     _name = None
 
     def __init__(self, data={}, id=None, name=None):
-        if not isinstance(value, dict):
+        if not isinstance(data, dict):
             # raise error if data is not type dict
             raise TypeError("Data must be type dict")
         # check whether data is not empty
@@ -36,6 +36,12 @@ class Operator:
                 # raise name if id not type string
                 raise TypeError("Name must be type str!")
             self._name = name
+
+        # check required attributes
+        if self._id == None:
+            raise AttributeMissingException("id")
+        if self._name == None:
+            raise AttributeMissingException("name")
 
     @property
     def id(self):
